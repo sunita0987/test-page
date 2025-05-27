@@ -19,9 +19,9 @@ const NavBar = () => {
       : "text-green-700 text-xl transition duration-300";
 
   return (
-    <nav className="bg-amber-300 p-4 shadow-md fixed top-0 left-0 w-full z-50">
+    <nav className="bg-fuchsia-400 p-4 shadow-md fixed top-0 left-0 w-full z-50">
       <div className="flex items-center justify-between px-4">
-        <div className="text-2xl font-bold">My App</div>
+        <div className="text-2xl font-bold">My Profile</div>
 
         <button className="text-3xl md:hidden z-50" onClick={toggleMenu}>
           {menuOpen ? "✖️" : "☰"}
@@ -46,7 +46,7 @@ const NavBar = () => {
         </div>
       </div>
       <div
-        className={`fixed inset-0 bg-amber-500 flex flex-col items-center justify-center transition-all duration-500 ease-in-out transform ${
+        className={`fixed inset-0 bg-indigo-500 flex flex-col items-center justify-center transition-all duration-500 ease-in-out transform ${
           menuOpen
             ? "scale-100 opacity-100"
             : "scale-95 opacity-0 pointer-events-none"

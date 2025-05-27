@@ -1,6 +1,7 @@
-import Card1 from "../assets/images/beautiful.jpg";
+import Card1 from "../assets/images/city.jpg";
 import Card2 from "../assets/images/flower.jpg";
 import Card3 from "../assets/images/city.jpg";
+
 export const products = [
   {
     name: "Samsung",
@@ -29,7 +30,7 @@ export const inputGroups = [
   [{ type: "email", placeholder: "Email Address" }],
 ];
 
-export const swiperSlider = [
+export const swiperSlider  = [
   {
     stepImg: Card1,
     description:
