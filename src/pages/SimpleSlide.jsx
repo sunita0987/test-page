@@ -32,7 +32,7 @@ const SimpleSlide = () => {
                   src={obj.stepImg}
                   alt={obj.heading}
                 />
-                <div className="bg-[#003459] w-full p-5 text-white rounded-b-xl">
+                <div className="bg-red-400 w-full p-5 text-white rounded-b-xl">
                   <h4 className="text-[20px] font-semibold pb-2">
                     {obj.heading}
                   </h4>
