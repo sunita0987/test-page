@@ -1,29 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { products } from "../utils/helper";
-
-const About = () => {
+const ProductList = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+  };
   return (
-    <div className="pt-20">
-      <h1 className="text-3xl font-bold text-center mb-6">Product List</h1>
-      <div className="p-4 grid md:grid-cols-3 gap-4">
-        {products.map((product, index) => (
+    <div className="p-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-20">
+        {products.map((product) => (
           <div
-            key={index}
-            className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all"
+            key={product.name}
+            className="bg-white shadow-lg rounded-2xl p-4 border border-gray-200 cursor-pointer hover:shadow-xl transition"
+            onClick={() => handleProductClick(product)}
           >
-            <h2 className="text-xl font-bold mb-1">{product.name}</h2>
-            <p className="text-green-600 text-lg font-semibold mb-2">
+            <h2 className="text-xl font-bold mb-2">{product.name}</h2>
+            <p className="text-lg text-green-600 font-semibold mb-4">
               {product.price}
             </p>
-            <ul className="list-disc list-inside text-sm text-gray-700">
-              {product.features.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
+            <ul className="list-disc list-inside text-gray-700">
+              {product.features.map((feature, index) => (
+                <li key={index} className="mb-1">
+                  {feature}
+                </li>
               ))}
             </ul>
           </div>
         ))}
       </div>
+      {selectedProduct && (
+        <div className="mt-10 bg-blue-50 p-6 rounded-xl border border-blue-200">
+          <h2 className="text-2xl font-bold mb-4">Product Details</h2>
+          <p className="text-xl font-semibold">{selectedProduct.name}</p>
+          <p className="text-lg text-green-700 mb-2">{selectedProduct.price}</p>
+          <h3 className="font-semibold">Features:</h3>
+          <ul className="list-disc list-inside text-gray-800">
+            {selectedProduct.features.map((feature, index) => (
+              <li key={index}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
-export default About;
+
+export default ProductList;
