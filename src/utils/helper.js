@@ -21,7 +21,6 @@ export const products = [
 ];
 export default products;
 
-
 export const inputGroups = [
   [
     { type: "text", placeholder: "First Name" },
@@ -30,7 +29,7 @@ export const inputGroups = [
   [{ type: "email", placeholder: "Email Address" }],
 ];
 
-export const swiperSlider  = [
+export const swiperSlider = [
   {
     stepImg: Card1,
     description:
